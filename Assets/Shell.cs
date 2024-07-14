@@ -10,7 +10,9 @@ public class Shell : MonoBehaviour
 
     private bool was_hit = false;
     public GameObject bullet;
-    
+
+    [HideInInspector] public score score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,5 +68,7 @@ public class Shell : MonoBehaviour
     private void OnDestroy()
     {
         spawner.number_of_shells -= 1;
+
+        score.AddPoints();
     }
 }

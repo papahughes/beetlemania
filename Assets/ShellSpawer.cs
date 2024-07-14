@@ -41,5 +41,8 @@ public class ShellSpawer : MonoBehaviour
         number_of_shells += 1;
 
         shell_spawn_timer = shell_spawn_time;
+
+        //give shells a reference to score script
+        new_shell.GetComponent<Shell>().score = GetComponent<score>();
     }
 }
